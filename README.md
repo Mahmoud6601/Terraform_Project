@@ -7,6 +7,7 @@ This repository contains a Terraform configuration to manage AWS resources inclu
 ```
 .
 ├── main.tf
+├── providers.tf
 ├── terraform.tfvars
 ├── variables.tf
 └── modules
@@ -68,6 +69,26 @@ This module manages the AWS VPC and associated subnets.
 
 The main configuration file that uses the custom modules to set up EC2 instances, security groups, S3 buckets, and a VPC. It references each module and provides the necessary input variables.
 
+### `providers.tf`
+
+Specifies the required providers and their versions.
+
+**Example**:
+```hcl
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.41.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-west-1"  # Specify the AWS region
+}
+```
+
 ### `terraform.tfvars`
 
 This file contains the values for the variables defined in `variables.tf`. It is used to provide specific values for your Terraform configuration.
@@ -117,6 +138,11 @@ variable "instance_type_ec2" {
    - Update `terraform.tfvars` with the required values.
    - Alternatively, set environment variables or directly modify `main.tf` for testing purposes.
 
+5. **Destroy Resources**:
+   If you need to destroy the resources created by Terraform, run:
+   ```sh
+   terraform destroy
+   ```
 
 ## Contributing
 
@@ -125,3 +151,4 @@ Feel free to submit issues, feature requests, or pull requests. Please ensure th
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+

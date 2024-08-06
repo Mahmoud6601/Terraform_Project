@@ -29,39 +29,6 @@ This repository contains a Terraform configuration to manage AWS resources inclu
         └── outputs.tf
 ```
 
-## Modules
-
-### `ec2_instance`
-
-This module manages AWS EC2 instances.
-
-- **`main.tf`**: Defines the EC2 instances, including instance types, key names, monitoring settings, and subnet configuration.
-- **`variables.tf`**: Defines variables for the EC2 instances, including instance type, key name, and subnet ID.
-- **`outputs.tf`**: Outputs the IDs of the created EC2 instances.
-
-### `security_group`
-
-This module manages AWS security groups.
-
-- **`main.tf`**: Defines the security group, including ingress and egress rules.
-- **`variables.tf`**: Defines variables for the security group, including name, VPC ID, and rules.
-- **`outputs.tf`**: Outputs the ID of the created security group.
-
-### `s3_bucket`
-
-This module manages AWS S3 buckets.
-
-- **`main.tf`**: Defines the S3 bucket and its configuration.
-- **`variables.tf`**: Defines variables for the S3 bucket, including the bucket name and ACL.
-- **`outputs.tf`**: Outputs the ID of the created S3 bucket.
-
-### `vpc`
-
-This module manages the AWS VPC and associated subnets.
-
-- **`main.tf`**: Defines the VPC, public and private subnets, and their configurations.
-- **`variables.tf`**: Defines variables for the VPC, including CIDR block, availability zones, and subnet configurations.
-- **`outputs.tf`**: Outputs the IDs of the created VPC and subnets.
 
 ## Files
 
@@ -113,7 +80,40 @@ variable "instance_type_ec2" {
 }
 ...
 ```
+## Modules
 
+### `ec2_instance`
+
+This module manages AWS EC2 instances.
+
+- **`main.tf`**: Defines the EC2 instances, including instance types, key names, monitoring settings, and subnet configuration.
+- **`variables.tf`**: Defines variables for the EC2 instances, including instance type, key name, and subnet ID.
+- **`outputs.tf`**: Outputs the IDs of the created EC2 instances.
+
+### `security_group`
+
+This module manages AWS security groups.
+
+- **`main.tf`**: Defines the security group, including ingress and egress rules.
+- **`variables.tf`**: Defines variables for the security group, including name, VPC ID, and rules.
+- **`outputs.tf`**: Outputs the ID of the created security group.
+
+### `s3_bucket`
+
+This module manages AWS S3 buckets.
+
+- **`main.tf`**: Defines the S3 bucket and its configuration.
+- **`variables.tf`**: Defines variables for the S3 bucket, including the bucket name and ACL.
+- **`outputs.tf`**: Outputs the ID of the created S3 bucket.
+
+### `vpc`
+
+This module manages the AWS VPC and associated subnets.
+
+- **`main.tf`**: Defines the VPC, public and private subnets, and their configurations.
+- **`variables.tf`**: Defines variables for the VPC, including CIDR block, availability zones, and subnet configurations.
+- **`outputs.tf`**: Outputs the IDs of the created VPC and subnets.
+  
 ## Usage
 
 1. **Clone the Repository**:
